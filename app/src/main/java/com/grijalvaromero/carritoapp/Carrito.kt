@@ -113,6 +113,8 @@ class Carrito : AppCompatActivity() {
     }
 
 
+
+
     private fun listacorrer(listaProductos: ArrayList<ItemCarrito>) {
 
         var i = 0;
