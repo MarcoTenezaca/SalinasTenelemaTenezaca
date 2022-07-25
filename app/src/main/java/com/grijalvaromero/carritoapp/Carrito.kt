@@ -112,6 +112,8 @@ class Carrito : AppCompatActivity() {
         }
     }
 
+    //Validar
+
 
 
 
