@@ -115,6 +115,10 @@ class Carrito : AppCompatActivity() {
         }
     }
 
+    //Validar
+
+
+
 
     private fun listacorrer(listaProductos: ArrayList<ItemCarrito>) {
 
