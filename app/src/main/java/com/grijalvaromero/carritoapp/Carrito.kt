@@ -112,10 +112,7 @@ class Carrito : AppCompatActivity() {
         }
     }
 
-    //Validar
-
-
-
+    //Validar TTS
 
     private fun listacorrer(listaProductos: ArrayList<ItemCarrito>) {
 
