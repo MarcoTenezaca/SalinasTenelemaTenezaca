@@ -107,6 +107,9 @@ class Carrito : AppCompatActivity() {
         listacorrer(listaProductos)
 
 
+
+
+
         btnPagar.setOnClickListener {
             pagar()
         }
