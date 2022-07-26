@@ -176,12 +176,12 @@ class RegistroClienteActivity : AppCompatActivity() {
                 if (Character.isUpperCase(item)){
                    STT_conMayus ++;
                     if (STT_conMayus >=2)
-                    STT_mayus = true
+                        STT_mayus = true
                 }
                 if (Character.isLowerCase(item)){
                     STT_conMinus ++;
                     if (STT_conMinus >=2)
-                    STT_minus = true
+                        STT_minus = true
                 }
                 if(!Character.isLetterOrDigit(item)) STT_caracter = true
             }
