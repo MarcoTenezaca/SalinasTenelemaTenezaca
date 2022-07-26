@@ -25,13 +25,39 @@ class RegistroClienteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     binding.buttonCliienteRegistrar.setOnClickListener {
-        var cedula = binding.editTextClienteCedula.text.toString()
-        var clave= binding.editTextClienteClave.text.toString()
-        var bandera:Boolean= false
+        var STT_cedula = binding.editTextClienteCedula.text.toString()
+        var STT_clave= binding.editTextClienteClave.text.toString()
+        var STT_bandera:Boolean= false
 
 //metodo nuevo
 
-        if(bandera){
+        if(STT_Campos(binding)) {
+            if(STT_Cedula(STT_cedula)){
+                if(STT_Clave(STT_clave)){
+
+                    STT_bandera= true
+                }else{
+                    Toast.makeText(this,"Error minimo 4 Caracteres, " +
+                            "Mayuscula, Minuscula,Numero,y  Caracter Especial",Toast.LENGTH_LONG).show()
+                }
+            }else{
+                Toast.makeText(this,"ERROR: Cedula incorrecta",Toast.LENGTH_LONG).show()
+            }
+
+        }else{
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("ERROR: Campos Incompletos")
+        builder.setMessage("ERROR: LLenar todos los campos")
+        builder.setPositiveButton("Aceptar") { dialog, which ->
+        }
+        builder.show()
+    }
+
+
+
+
+        if(STT_bandera){
             var config = Config()
             var url = config.ipServidor+ "Cliente"
 
@@ -139,7 +165,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         var STT_bandera=false
 
 
-        if (STT_clave.length>=4){
+        if (STT_clave.length>=6 && STT_clave.length <=10){
             for (item in STT_clave)
             {
                 Log.i("STT_clave",item.toString())
@@ -159,4 +185,3 @@ class RegistroClienteActivity : AppCompatActivity() {
     }
 }
 
-}
