@@ -27,9 +27,12 @@ class RegistroClienteActivity : AppCompatActivity() {
     binding.buttonCliienteRegistrar.setOnClickListener {
         var STT_cedula = binding.editTextClienteCedula.text.toString()
         var STT_clave= binding.editTextClienteClave.text.toString()
+        var SST_correo = binding.editTextEmail.text.toString();
         var STT_bandera:Boolean= false
 
-
+        if(SST_correo.toString().length == 0){
+            println("Ingrese el correo ")
+        }
 
         if(STT_Campos(binding)) {
             if(STT_Cedula(STT_cedula)){
