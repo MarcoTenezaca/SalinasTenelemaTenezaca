@@ -30,9 +30,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         var SST_correo = binding.editTextEmail.text.toString();
         var STT_bandera:Boolean= false
 
-        if(SST_correo.toString().length == 0){
-            println("Ingrese el correo ")
-        }
+
 
         if(STT_Campos(binding)) {
             if(STT_Cedula(STT_cedula)){
@@ -43,6 +41,7 @@ class RegistroClienteActivity : AppCompatActivity() {
                     Toast.makeText(this,"Error minimo 6 Caracteres y maximo 10  caracteres, " +
                             "2-Mayusculas, 2-Minusculas,1-Numero,y  1-Caracter Especial",Toast.LENGTH_LONG).show()
                 }
+
             }else{
                 Toast.makeText(this,"ERROR: Cedula incorrecta",Toast.LENGTH_LONG).show()
             }
@@ -111,6 +110,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         if (binding.editTextClienteDireccion.text.toString().equals("")) return  false
         if (binding.editTextClienteNombre.text.toString().equals("")) return  false
         if (binding.editTextClienteClave.text.toString().equals("")) return  false
+        if(binding.editTextEmail.text.toString().equals("")) return  false
 
         return true
     }
