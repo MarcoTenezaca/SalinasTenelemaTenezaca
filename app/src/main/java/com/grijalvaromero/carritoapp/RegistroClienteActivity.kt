@@ -73,10 +73,61 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     }
 
+    }
+    //Valida campos
+    private fun STT_Campos(binding: ActivityRegistroClienteBinding): Boolean {
 
+        if (binding.editTextClienteCedula.text.toString().equals("")) return  false
+        if (binding.editTextClienteApellido.text.toString().equals("")) return  false
+        if (binding.editTextClienteDireccion.text.toString().equals("")) return  false
+        if (binding.editTextClienteNombre.text.toString().equals("")) return  false
+        if (binding.editTextClienteClave.text.toString().equals("")) return  false
+
+        return true
     }
 
+    //validacion de la Cedula
+    private fun STT_Cedula(STT_cedula: String): Boolean {
 
+        var STT_Correcto = false
+
+        try {
+            if (STT_cedula.length === 10)
+            {
+                val STT_tercer = STT_cedula.substring(2, 3).toInt()
+                if (STT_tercer < 6) {
+                    val STT_ValCedula = intArrayOf(2, 1, 2, 1, 2, 1, 2, 1, 2)
+                    val STT_verificar = STT_cedula.substring(9, 10).toInt()
+                    var STT_suma = 0
+                    var STT_digito = 0
+                    for (i in 0 until STT_cedula.length - 1) {
+                        STT_digito = STT_cedula.substring(i, i + 1).toInt() * STT_ValCedula[i]
+                        STT_suma += STT_digito % 10 + STT_digito / 10
+                    }
+                    if (STT_suma % 10 == 0 && STT_suma % 10 == STT_verificar) {
+                        STT_Correcto = true
+                    } else if (10 - STT_suma % 10 == STT_verificar) {
+                        STT_Correcto = true
+                    } else {
+                        STT_Correcto = false
+                    }
+                } else {
+                    STT_Correcto = false
+                }
+            } else {
+                STT_Correcto = false
+            }
+        } catch (nfe: NumberFormatException) {
+            STT_Correcto = false
+        } catch (err: Exception) {
+            // println("Ocurrio un error en el proceso de validacion")
+            STT_Correcto = false
+        }
+        if (!STT_Correcto) {
+            println("La Cédula ingresada es Incorrecta")
+        }
+        return STT_Correcto
+    }
 
 
 }

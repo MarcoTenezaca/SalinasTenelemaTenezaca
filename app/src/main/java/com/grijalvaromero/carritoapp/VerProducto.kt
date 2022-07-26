@@ -39,6 +39,11 @@ class VerProducto : AppCompatActivity() {
     lateinit var  btnImagenCompras:ImageButton
 
 
+
+    //Prodct
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_producto)
