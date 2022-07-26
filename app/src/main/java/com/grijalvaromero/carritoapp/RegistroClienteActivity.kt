@@ -1,6 +1,7 @@
 package com.grijalvaromero.carritoapp
 
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -37,7 +38,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
                     STT_bandera= true
                 }else{
-                    Toast.makeText(this,"Error minimo 4 Caracteres, " +
+                    Toast.makeText(this,"Error minimo 6 Caracteres, " +
                             "Mayuscula, Minuscula,Numero,y  Caracter Especial",Toast.LENGTH_LONG).show()
                 }
             }else{
@@ -161,7 +162,8 @@ class RegistroClienteActivity : AppCompatActivity() {
         var STT_num= false;
         var STT_minus = false;
         var STT_caracter = false;
-
+        var STT_conMayus = 0;
+        var STT_conMinus = 0;
         var STT_bandera=false
 
 
@@ -169,9 +171,18 @@ class RegistroClienteActivity : AppCompatActivity() {
             for (item in STT_clave)
             {
                 Log.i("STT_clave",item.toString())
+
                 if (Character.isDigit(item))   STT_num = true
-                if (Character.isUpperCase(item)) STT_mayus = true
-                if (Character.isLowerCase(item)) STT_minus = true
+                if (Character.isUpperCase(item)){
+                   STT_conMayus ++;
+                    if (STT_conMayus >=2)
+                    STT_mayus = true
+                }
+                if (Character.isLowerCase(item)){
+                    STT_conMinus ++;
+                    if (STT_conMinus >=2)
+                    STT_minus = true
+                }
                 if(!Character.isLetterOrDigit(item)) STT_caracter = true
             }
 
