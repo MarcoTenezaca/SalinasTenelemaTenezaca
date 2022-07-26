@@ -30,7 +30,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         var SST_correo = binding.editTextEmail.text.toString();
         var STT_bandera:Boolean= false
 
-
+//
 
         if(STT_Campos(binding)) {
             if(STT_Cedula(STT_cedula)){
