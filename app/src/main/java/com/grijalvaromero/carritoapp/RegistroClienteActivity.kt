@@ -172,17 +172,9 @@ class RegistroClienteActivity : AppCompatActivity() {
             {
                 Log.i("STT_clave",item.toString())
 
-                if (Character.isDigit(item))   STT_num = true
-                if (Character.isUpperCase(item)){
-                   STT_conMayus ++;
-                    if (STT_conMayus >=2)
-                        STT_mayus = true
-                }
-                if (Character.isLowerCase(item)){
-                    STT_conMinus ++;
-                    if (STT_conMinus >=2)
-                        STT_minus = true
-                }
+                if (Character.isDigit(item)) STT_num = true
+                if (Character.isUpperCase(item))STT_mayus = true
+                if (Character.isLowerCase(item)) STT_minus = true
                 if(!Character.isLetterOrDigit(item)) STT_caracter = true
             }
 
