@@ -43,6 +43,7 @@ class VerProducto : AppCompatActivity() {
     //Prodct
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_producto)

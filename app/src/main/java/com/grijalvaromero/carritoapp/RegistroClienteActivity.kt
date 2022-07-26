@@ -73,7 +73,17 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     }
 
+    }
+    //Valida campos
+    private fun STT_Campos(binding: ActivityRegistroClienteBinding): Boolean {
 
+        if (binding.editTextClienteCedula.text.toString().equals("")) return  false
+        if (binding.editTextClienteApellido.text.toString().equals("")) return  false
+        if (binding.editTextClienteDireccion.text.toString().equals("")) return  false
+        if (binding.editTextClienteNombre.text.toString().equals("")) return  false
+        if (binding.editTextClienteClave.text.toString().equals("")) return  false
+
+        return true
     }
 
 
