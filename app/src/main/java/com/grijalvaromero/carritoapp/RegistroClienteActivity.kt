@@ -128,6 +128,35 @@ class RegistroClienteActivity : AppCompatActivity() {
         }
         return STT_Correcto
     }
+    // Validar la Clave
+    private fun STT_Clave( STT_clave: String): Boolean {
 
+        var STT_mayus = false
+        var STT_num= false;
+        var STT_minus = false;
+        var STT_caracter = false;
+
+        var STT_bandera=false
+
+
+        if (STT_clave.length>=4){
+            for (item in STT_clave)
+            {
+                Log.i("STT_clave",item.toString())
+                if (Character.isDigit(item))   STT_num = true
+                if (Character.isUpperCase(item)) STT_mayus = true
+                if (Character.isLowerCase(item)) STT_minus = true
+                if(!Character.isLetterOrDigit(item)) STT_caracter = true
+            }
+
+        }else{
+            STT_bandera=false
+        }
+
+        if (STT_num && STT_mayus && STT_minus && STT_caracter)  STT_bandera = true
+
+        return STT_bandera
+    }
+}
 
 }
