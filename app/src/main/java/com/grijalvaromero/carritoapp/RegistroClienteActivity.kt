@@ -20,7 +20,6 @@ import org.json.JSONObject
 class RegistroClienteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(R.layout.activity_registro_cliente)
 
         val binding = ActivityRegistroClienteBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -30,7 +29,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         var STT_clave= binding.editTextClienteClave.text.toString()
         var STT_bandera:Boolean= false
 
-//metodo nuevo
+
 
         if(STT_Campos(binding)) {
             if(STT_Cedula(STT_cedula)){
@@ -38,8 +37,8 @@ class RegistroClienteActivity : AppCompatActivity() {
 
                     STT_bandera= true
                 }else{
-                    Toast.makeText(this,"Error minimo 6 Caracteres, " +
-                            "Mayuscula, Minuscula,Numero,y  Caracter Especial",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Error minimo 6 Caracteres y maximo 10  caracteres, " +
+                            "2-Mayusculas, 2-Minusculas,1-Numero,y  1-Caracter Especial",Toast.LENGTH_LONG).show()
                 }
             }else{
                 Toast.makeText(this,"ERROR: Cedula incorrecta",Toast.LENGTH_LONG).show()
@@ -147,7 +146,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         } catch (nfe: NumberFormatException) {
             STT_Correcto = false
         } catch (err: Exception) {
-            // println("Ocurrio un error en el proceso de validacion")
+
             STT_Correcto = false
         }
         if (!STT_Correcto) {

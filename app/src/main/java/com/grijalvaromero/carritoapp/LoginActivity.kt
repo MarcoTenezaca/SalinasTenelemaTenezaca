@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                 for (i in 0 until datos.length()){
                     val item = datos.getJSONObject(i)
                    Log.i("Cliente",item.getString("contrasenia"))
-                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString()){
+                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString() ){
                        bandera = true
 
                         idCliente= item.getString("idCliente").toString()
