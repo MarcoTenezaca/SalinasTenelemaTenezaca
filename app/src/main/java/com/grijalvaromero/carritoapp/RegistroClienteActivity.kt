@@ -194,5 +194,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
         return STT_bandera
     }
+
+    //fin metodos
 }
 
