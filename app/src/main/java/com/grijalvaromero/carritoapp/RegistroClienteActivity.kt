@@ -154,7 +154,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         }
         return STT_Correcto
     }
-    // Validar la Clave
+    // Validar la Clave usuario
     private fun STT_Clave( STT_clave: String): Boolean {
 
         var STT_mayus = false
