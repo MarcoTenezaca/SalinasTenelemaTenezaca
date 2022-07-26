@@ -29,7 +29,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         var clave= binding.editTextClienteClave.text.toString()
         var bandera:Boolean= false
 
-
+//metodo nuevo
 
         if(bandera){
             var config = Config()

@@ -106,9 +106,7 @@ class Carrito : AppCompatActivity() {
 
         listacorrer(listaProductos)
 
-
-
-
+//Validacion Cedula
 
         btnPagar.setOnClickListener {
             pagar()
